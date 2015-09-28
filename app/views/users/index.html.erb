@@ -1,0 +1,27 @@
+<center>
+<h1>LIST USER</h1>
+<table border=1 width=1000>
+<thead>
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th colspan="3">Module</th>
+</tr>
+</thead>
+<tbody>
+<% @users.each do |user| %>
+<tr>
+<td><%= user.name %></td>
+<td><%= user.email %></td>
+<td><%= link_to 'Show', user %></td>
+<td><%= link_to 'Edit', edit_user_path(user) %></td>
+<td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>
+<% end %>
+</tbody>
+</table>
+<br>
+<%= link_to 'NEW USER', new_user_path %>
+<%= link_to 'VIEW MICROPOST', microposts_path %>
+<p> **************************************************** </p>
+</center>
